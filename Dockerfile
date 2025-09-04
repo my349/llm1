@@ -1,5 +1,6 @@
 FROM ghcr.io/ggml-org/llama.cpp:server
 
+ENV LLAMA_CHAT_TEMPLATE_KWARGS='{"reasoning_effort":"low","builtin_tools":["python"]}'
 ENV LLAMA_ARG_HF_REPO=ggml-org/gpt-oss-20b-GGUF
 ENV LLAMA_ARG_API_PREFIX=$LLAMA_ARG_API_PREFIX
 ENV LLAMA_ARG_NO_WEBUI=1
@@ -7,5 +8,5 @@ ENV LLAMA_ARG_JINJA=1
 
 EXPOSE 8080/tcp
 
-HEALTHCHECK CMD curl -f http://localhost:8080/$LLAMA_ARG_API_PREFIX/health
+HEALTHCHECK CMD curl -f http://[::]:8080/$LLAMA_ARG_API_PREFIX/health
 ENTRYPOINT [ "./llama-server" ]

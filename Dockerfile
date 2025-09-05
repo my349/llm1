@@ -1,6 +1,6 @@
 FROM ghcr.io/ggml-org/llama.cpp:server
 
-ENV LLAMA_CHAT_TEMPLATE_KWARGS='{"reasoning_effort":"high","builtin_tools":["python"]}'
+ENV LLAMA_CHAT_TEMPLATE_KWARGS='{"reasoning_effort":"medium","builtin_tools":[]}'
 ENV LLAMA_ARG_HF_REPO=ggml-org/gpt-oss-20b-GGUF
 ENV LLAMA_ARG_API_PREFIX=$LLAMA_ARG_API_PREFIX
 ENV LLAMA_ARG_CTX_SIZE=0

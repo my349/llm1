@@ -3,6 +3,7 @@ FROM ghcr.io/ggml-org/llama.cpp:server
 ENV LLAMA_CHAT_TEMPLATE_KWARGS='{"reasoning_effort":"low","builtin_tools":["python"]}'
 ENV LLAMA_ARG_HF_REPO=ggml-org/gpt-oss-20b-GGUF
 ENV LLAMA_ARG_API_PREFIX=$LLAMA_ARG_API_PREFIX
+ENV LLAMA_ARG_CONTEXT_SHIFT=1
 ENV LLAMA_ARG_NO_WEBUI=1
 ENV LLAMA_ARG_JINJA=1
 
